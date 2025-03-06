@@ -5,6 +5,7 @@ import { AppContext } from "../context/AppContext";
 const Hotels = () => {
   const { location } = useParams();
   const [filterHot, setFilterHot] = useState([]);
+  const [showFilter, setShowFilter] = useState(false);
   const navigate = useNavigate();
   const { hotels } = useContext(AppContext);
 
@@ -23,16 +24,16 @@ const Hotels = () => {
     <div>
       <p className="text-gray-600">Browse according to hotels location.</p>
       <div className="flex flex-col sm:flex-row items-start gap-5 mt-5">
-        <div className="flex flex-col gap-4 text-sm text-gray-600">
+        <button className={`py-1 px-3 border rounded text-sm transition-all sm:hidden ${showFilter ? 'bg-primary text-white' : ''}`} onClick={() => (setShowFilter(prev => !prev))}>Filters</button>
+        <div className={`flex-col gap-4 text-sm text-gray-600 ${showFilter ? 'flex' : 'hidden sm:flex'}`}>
           <p
             onClick={() =>
               location === "Biratnagar"
                 ? navigate("/hotels")
                 : navigate("/hotels/Biratnagar")
             }
-            className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
-              location === "Biratnagar" ? "bg-indigo-100 text-black" : ""
-            } `}
+            className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${location === "Biratnagar" ? "bg-indigo-100 text-black" : ""
+              } `}
           >
             Biratnagar
           </p>
@@ -42,9 +43,8 @@ const Hotels = () => {
                 ? navigate("/hotels")
                 : navigate("/hotels/Butwal")
             }
-            className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
-              location === "Butwal" ? "bg-indigo-100 text-black" : ""
-            } `}
+            className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${location === "Butwal" ? "bg-indigo-100 text-black" : ""
+              } `}
           >
             Butwal
           </p>
@@ -54,9 +54,8 @@ const Hotels = () => {
                 ? navigate("/hotels")
                 : navigate("/hotels/Chitwan")
             }
-            className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
-              location === "Chitwan" ? "bg-indigo-100 text-black" : ""
-            } `}
+            className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${location === "Chitwan" ? "bg-indigo-100 text-black" : ""
+              } `}
           >
             Chitwan
           </p>
@@ -66,9 +65,8 @@ const Hotels = () => {
                 ? navigate("/hotels")
                 : navigate("/hotels/Dhangadi")
             }
-            className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
-              location === "Dhangadi" ? "bg-indigo-100 text-black" : ""
-            } `}
+            className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${location === "Dhangadi" ? "bg-indigo-100 text-black" : ""
+              } `}
           >
             Dhangadi
           </p>
@@ -78,9 +76,8 @@ const Hotels = () => {
                 ? navigate("/hotels")
                 : navigate("/hotels/Jhapa")
             }
-            className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
-              location === "Jhapa" ? "bg-indigo-100 text-black" : ""
-            } `}
+            className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${location === "Jhapa" ? "bg-indigo-100 text-black" : ""
+              } `}
           >
             Jhapa
           </p>
@@ -90,9 +87,8 @@ const Hotels = () => {
                 ? navigate("/hotels")
                 : navigate("/hotels/Kathmandu")
             }
-            className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
-              location === "Kathmandu" ? "bg-indigo-100 text-black" : ""
-            } `}
+            className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${location === "Kathmandu" ? "bg-indigo-100 text-black" : ""
+              } `}
           >
             Kathmandu
           </p>
@@ -102,9 +98,8 @@ const Hotels = () => {
                 ? navigate("/hotels")
                 : navigate("/hotels/Nepalgunj")
             }
-            className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
-              location === "Nepalgunj" ? "bg-indigo-100 text-black" : ""
-            }`}
+            className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${location === "Nepalgunj" ? "bg-indigo-100 text-black" : ""
+              }`}
           >
             Nepalgunj
           </p>
@@ -114,9 +109,8 @@ const Hotels = () => {
                 ? navigate("/hotels")
                 : navigate("/hotels/Pokhara")
             }
-            className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
-              location === "Pokhara" ? "bg-indigo-100 text-black" : ""
-            } `}
+            className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${location === "Pokhara" ? "bg-indigo-100 text-black" : ""
+              } `}
           >
             Pokhara
           </p>
